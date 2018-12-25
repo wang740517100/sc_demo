@@ -1,0 +1,14 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: zipkin-server
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false #默认为true
+spring:
+  sleuth:
+    sampler:
+      percentage: 1.0 #测试采样率为1.0,即为全量采集,默认为0.1

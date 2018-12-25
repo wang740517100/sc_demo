@@ -1,0 +1,31 @@
+server:
+  port: 8071
+eureka:
+  client:
+    service-url: # EurekaServer地址
+      defaultZone: http://127.0.0.1:8403/eureka,http://127.0.0.1:8404/eureka
+  instance:
+      prefer-ip-address: true # 当调用getHostname获取实例的hostname时，返回ip而不是host名称
+      ip-address: 127.0.0.1
+spring:
+  application:
+    name: comsumer1
+  zipkin:  #指定zipkin server的地址
+      base-url:  http://127.0.0.1:9001
+
+feign:
+  hystrix:
+    enabled: true # 开启Feign的熔断功能
+ribbon:
+  ConnecttionTimeOut: 500 #如果超过500毫秒没有建立连接熔断
+  ReadTimeOut: 2000 #建立连接后超过2秒没有响应熔断
+feign:
+  compression:
+    request:
+      enabled: true # 开启请求压缩
+      mime-types: text/html,application/xml,application/json # 设置压缩的数据类型
+      min-request-size: 2048 # 设置触发压缩的大小下限
+    response:
+      enabled: true # 开启响应压缩
+
+

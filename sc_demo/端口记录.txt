@@ -1,0 +1,12 @@
+eureka-server 8403 8404
+
+user-service  8061
+user-service2 8062
+
+consumer1 8071
+consumer2 8072
+
+
+zuul-demo 8091
+
+zipkin-server 9001

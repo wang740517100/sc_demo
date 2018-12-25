@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!--命名空间-->
+<mapper namespace="com.wangkf.mapper.UserMapper" >
+
+    <!--返回结果-->
+    <resultMap id="BaseResultMap" type="com.wangkf.pojo.User" >
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="salt" property="salt" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <!--id要和mapper接口方法名一致，参数名也要一致-->
+    <select id="selectByPrimaryKey" parameterType="String" resultMap="BaseResultMap">
+        select username,password,phone,salt from tb_user where username = #{username}
+    </select>
+</mapper>
