@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wangkf</groupId>
+    <artifactId>springcloud</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>user-service</module>
+        <module>comsumer1</module>
+        <module>eureka-server</module>
+        <module>zuul-demo</module>
+        <module>user-service2</module>
+        <module>zipkin-server</module>
+        <module>comsumer2</module>
+        <module>config-server</module>
+    </modules>
+
+    <!--父工程项目不用打jar包-->
+    <packaging>pom</packaging>
+
+    <!--添加父工程坐标-->
+    <parent>
+        <!-- springboot的版本与springcloud版本一定要匹配-->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.1.RELEASE</version>
+    </parent>
+
+    <!--采用配置管理下面依赖包的版本-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <mapper.starter.version>2.0.3</mapper.starter.version>
+        <mysql.version>6.0.6</mysql.version>
+    </properties>
+
+
+    <!--对子项目依赖包进行版本管理的管理器-->
+    <!--只是对版本进行管理，不会实际引入jar-->
+    <dependencyManagement>
+        <dependencies>
+            <!-- springCloud依赖包 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 通用Mapper启动器 -->
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper.starter.version}</version>
+            </dependency>
+            <!-- mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--会实际下载jar包-->
+    <dependencies>
+        <!--该jar包自动生成getter和setter方法以及日志打印等-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!--全局配置（project build）针对整个项目的所有情况都有效-->
+    <build>
+        <plugins>
+            <!--把项目打jar包运行用-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Spring的远程仓库地址 -->
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <!--库中版本为snapshots的构件-->
+            <snapshots>
+                <!--是否支持更新-->
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>

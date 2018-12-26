@@ -1,0 +1,28 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: config-server
+  #配置git仓库地址(http或ssh)
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:wang740517100/config-center.git
+          username: want740517100 #访问git仓库的用户名
+          password: wangbin19931016 #访问git仓库的用户密码
+          # 跳过ssh校验
+          #ignore-local-ssh-settings: true
+          #skip-ssl-validation: true
+          #private-key:
+          #            -----BEGIN RSA PRIVATE KEY-----
+          #                    你的私钥
+          #            -----END RSA PRIVATE KEY-----
+          #  配置仓库路径下相对搜索位置，可以配置多个
+          #search-paths: ######
+      label: master
+
+eureka:
+  client:
+    service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
+      defaultZone: http://127.0.0.1:8403/eureka,http://127.0.0.1:8404/eureka

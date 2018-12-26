@@ -1,0 +1,25 @@
+eureka:
+  client:
+    service-url: # EurekaServer的地址，现在是自己的地址，如果是集群，需要加上其它Server的地址。
+      defaultZone: http://127.0.0.1:8403/eureka,http://127.0.0.1:8404/eureka
+
+spring:
+  application:
+    name: zipkin-server
+  #统一配置中心
+  cloud:
+    config:
+      discovery:
+        enabled: true #开启通过服务访问Config Server的功能
+        service-id: config-server #指定Config Server注册的服务名
+      label: master #对应配置文件规则中的{label} 部分
+      profile: dev  #对应配置文件规则中的{profile}部分
+      uri: http://localhost:9011/
+
+      fail-fast:  true #失败快速响应与重试
+      retry:
+        initial-interval: 1000  #初始重试间隔时间（单位毫秒），默认为1000
+        multiplier: 1.1 #下一间隔的乘数
+        max-interval: 2000 # 最大间隔时间,默认2000毫秒
+        max-attempts: 6
+
