@@ -28,12 +28,6 @@ public class ConsumerController {
     }
 
 
-
-
-
-
-
-
     /**
      * RestTemplate示例
 

@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.context.annotation.Bean;
 
 /**
- * 整合mybatis示例使用xml方式
+ * 1:整合mybatis(使用xml方式)
  *
  * Created by wangk on 2018-12-22.
  *

@@ -11,11 +11,9 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.http.client.OkHttp3ClientHttpRequestFactory;
 
 /**
- * 整合mybatis示例使用xml方式
  *
- * 整合Robbin负载均衡
- *
- * 整合Hystix断路器
+ * 1:整合Robbin负载均衡
+ * 2:整合Hystix断路器
  *
  * Created by wangk on 2018-12-22.
  *

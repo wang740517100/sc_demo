@@ -36,6 +36,7 @@
             <version>1.4.2.RELEASE</version>
         </dependency>
 
+
         <!-- zipkin链路追踪 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -51,8 +52,15 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-
+        <!--flyway依赖-->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>4.0.3</version>
+        </dependency>
     </dependencies>
+
+
 
 
 </project>

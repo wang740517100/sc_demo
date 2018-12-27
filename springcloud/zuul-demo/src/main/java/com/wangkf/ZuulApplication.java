@@ -7,7 +7,8 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 /**
  * Created by wangk on 2018-12-23.
  *
- * zuul网关
+ * 1:zuul网关
+ * 集成负载均衡和断路器
  *
  */
 @SpringBootApplication

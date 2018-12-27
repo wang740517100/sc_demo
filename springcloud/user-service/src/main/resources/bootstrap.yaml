@@ -5,13 +5,19 @@ eureka:
 
 #com.mysql.cj.jdbc.Driver驱动在url后面要加那一段
 spring:
+  application:
+    name: user-service
+  #连接池配置
   datasource:
     url: jdbc:mysql://localhost:3306/leyou?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
     password: wangkf
     driver-class-name: com.mysql.cj.jdbc.Driver
-  application:
-    name: user-service
+  #flyway数据库版本工具配置
+  flyway:
+      baseline-on-migrate: true
+      #table:  #默认"schema_version"
+      #locations:  #默认为db/migration
 
   #统一配置中心
   cloud:
@@ -29,6 +35,8 @@ spring:
         multiplier: 1.1 #下一间隔的乘数
         max-interval: 2000 # 最大间隔时间,默认2000毫秒
         max-attempts: 6
+
+
 
 
 

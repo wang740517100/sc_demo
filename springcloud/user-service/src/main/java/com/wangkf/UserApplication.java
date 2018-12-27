@@ -11,7 +11,12 @@ import org.springframework.web.client.RestTemplate;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
- * 整合mybatis使用通用Mapper(通用mapper封装了单表的增删改查等方法)
+ * 1:整合通用Mapper
+ * 通用mapper封装了单表的增删改查等方法
+ * 通用Mapper也集成有mybatis
+ *
+ * 2:整合Flyway
+ * Flyway是数据库版本控制工具
  *
  * Created by wangk on 2018-12-22.
  *

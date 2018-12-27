@@ -79,10 +79,16 @@
     <!--全局配置（project build）针对整个项目的所有情况都有效-->
     <build>
         <plugins>
-            <!--把项目打jar包运行用-->
+            <!--项目打jar包插件-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--flyway插件-->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.0.3</version>
             </plugin>
         </plugins>
     </build>

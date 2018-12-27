@@ -7,11 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
- * Created by wangk on 2018-12-23.
  *
- * 整合Feign
+ * 1:整合Feign
  * Feign中已经自动集成了Ribbon负载均衡
  * Feign默认也有对Hystix的集成
+ *
+ * Created by wangk on 2018-12-23.
+ *
  */
 @FeignClient(value = "user-service", fallback = UserClientFallBack.class) //拉取服务列表(服务名)
 public interface UserClient {

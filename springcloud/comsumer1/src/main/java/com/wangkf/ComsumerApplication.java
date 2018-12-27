@@ -16,13 +16,21 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * 整合mybatis示例使用xml方式
  *
- * 整合Feign
+ * 1:整合RestTemplate（http远程调用） 注释代码示例
+ * 对基于Http的客户端进行了封装，并且实现了对象与json的序列化和反序列化，非常方便。
+ * RestTemplate并没有限定Http的客户端类型，而是进行了抽象，目前常用的3种都有支持：
+ * HttpClient
+ * OkHttp
+ * JDK原生的URLConnection（默认的）
+
+ * 2:整合Feign
+ * Feign里面集成有负载均衡和断路器
  *
  * Created by wangk on 2018-12-22.
  *
  */
+
 //@SpringBootApplication
 //@EnableDiscoveryClient //开启注册中心(包含开启Eureka客户端)
 //@EnableCircuitBreaker //开启熔断器
@@ -35,14 +43,7 @@ public class ComsumerApplication {
     }
 
 
-
     /*
-    下面是RestTemplate模板工具类:
-    对基于Http的客户端进行了封装，并且实现了对象与json的序列化和反序列化，非常方便。
-    RestTemplate并没有限定Http的客户端类型，而是进行了抽象，目前常用的3种都有支持：
-    - HttpClient
-    - OkHttp
-    - JDK原生的URLConnection（默认的）
     @Bean //产生一个Bean，然后交给Spring容器
     @LoadBalanced //开启负载均衡，Eureka中已经集成了Ribbon，无需引入新的依赖
     public RestTemplate restTemplate() {
