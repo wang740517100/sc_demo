@@ -9,8 +9,8 @@ spring:
       server:
         git:
           uri: git@github.com:wang740517100/config-center.git
-          username: want740517100 #访问git仓库的用户名
-          password: wangbin19931016 #访问git仓库的用户密码
+          username: ***
+          password: ***
       label: master
   #rabbitmq配置
   rabbitmq:
