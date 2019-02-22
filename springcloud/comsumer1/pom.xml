@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.wangkf.comsumer1</groupId>
     <artifactId>comsumer1</artifactId>
-
 
     <dependencies>
         <!-- web项目 -->
@@ -24,7 +24,6 @@
             <artifactId>okhttp</artifactId>
             <version>3.9.0</version>
         </dependency>
-
         <!-- Eureka客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -42,7 +41,6 @@
             <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
             <version>1.4.2.RELEASE</version>
         </dependency>
-
         <!-- zipkin链路追踪 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -52,10 +50,23 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
+        <!--springboot热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
+            <optional>true</optional>
+            <scope>true</scope>
+        </dependency>
         <!-- 连接配置中心 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+        <!--bus消息总线-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
         </dependency>
 
     </dependencies>

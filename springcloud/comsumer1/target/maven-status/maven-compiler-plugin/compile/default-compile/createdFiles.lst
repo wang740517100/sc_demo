@@ -1,0 +1,5 @@
+com\wangkf\ComsumerApplication.class
+com\wangkf\controller\ConsumerController.class
+com\wangkf\pojo\User.class
+com\wangkf\client\UserClient.class
+com\wangkf\client\impl\UserClientFallBack.class

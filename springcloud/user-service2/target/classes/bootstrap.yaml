@@ -12,6 +12,7 @@ spring:
       password: wangkf
       driver-class-name: com.mysql.cj.jdbc.Driver
 
+  #统一配置中心
   cloud:
     config:
       discovery:

@@ -1,0 +1,5 @@
+com\wangkf\controller\UserController.class
+com\wangkf\service\UserService.class
+com\wangkf\pojo\User.class
+com\wangkf\mapper\UserMapper.class
+com\wangkf\UserApplication.class

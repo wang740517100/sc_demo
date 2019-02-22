@@ -28,14 +28,18 @@ spring:
       label: master #对应配置文件规则中的{label} 部分
       profile: dev  #对应配置文件规则中的{profile}部分
       uri: http://localhost:9011/
-
       fail-fast:  true #失败快速响应与重试
       retry:
         initial-interval: 1000  #初始重试间隔时间（单位毫秒），默认为1000
         multiplier: 1.1 #下一间隔的乘数
         max-interval: 2000 # 最大间隔时间,默认2000毫秒
         max-attempts: 6
-
+ #rabbitmq配置
+ rabbitmq:
+   username: guest
+   password: guest
+   host: localhost
+   port: 5672
 
 
 

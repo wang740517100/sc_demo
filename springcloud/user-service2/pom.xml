@@ -9,6 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.wangkf.user-service2</groupId>
+    <artifactId>user-service2</artifactId>
+
     <dependencies>
         <!-- Eureka客户端 -->
         <dependency>
@@ -37,7 +40,6 @@
             <artifactId>druid</artifactId>
             <version>1.0.19</version>
         </dependency>
-
         <!-- 添加OkHttp支持 -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
@@ -48,18 +50,27 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
         </dependency>
-
         <!-- 连接配置中心 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-
-
+        <!--springboot热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
+            <optional>true</optional>
+            <scope>true</scope>
+        </dependency>
+        <!--bus消息总线-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
 
     </dependencies>
 
-    <artifactId>consumer-demo</artifactId>
 
     <build>
         <plugins>
@@ -69,6 +80,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

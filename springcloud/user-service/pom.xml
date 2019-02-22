@@ -9,16 +9,16 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.wangkf.user-service</groupId>
     <artifactId>user-service</artifactId>
 
-
     <dependencies>
-        <!-- web项目 -->
+        <!-- springboot的web项目依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- 通用Mapper启动器 ：功能是简化对单表的增删改查-->
+        <!-- 通用Mapper启动器-->
         <dependency>
             <groupId>tk.mybatis</groupId>
             <artifactId>mapper-spring-boot-starter</artifactId>
@@ -28,15 +28,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
         <!-- Eureka客户端 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
             <version>1.4.2.RELEASE</version>
         </dependency>
-
-
         <!-- zipkin链路追踪 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -46,7 +43,6 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
-
         <!-- 连接配置中心 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -58,6 +54,21 @@
             <artifactId>flyway-core</artifactId>
             <version>4.0.3</version>
         </dependency>
+        <!--springboot热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!-- optional=true,依赖不会传递，该项目依赖devtools；之后依赖该项目的项目如果想要使用devtools，需要重新引入 -->
+            <optional>true</optional>
+            <scope>true</scope>
+        </dependency>
+        <!--bus消息总线-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
+
     </dependencies>
 
 

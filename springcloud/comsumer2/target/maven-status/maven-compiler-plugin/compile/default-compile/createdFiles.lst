@@ -1,0 +1,4 @@
+com\wangkf\ComsumerApplication.class
+com\wangkf\dao\UserDao.class
+com\wangkf\controller\ConsumerController.class
+com\wangkf\pojo\User.class

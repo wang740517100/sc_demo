@@ -1,7 +1,7 @@
 eureka:
   client:
     service-url: # EurekaServer地址
-      defaultZone: http://127.0.0.1:8403/eureka,http://127.0.0.1:8404/eureka
+      defaultZone: http://127.0.0.1:8403/eureka
 
 spring:
   application:
